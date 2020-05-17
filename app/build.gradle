@@ -17,7 +17,11 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField("String", "API_KEY", "\"CWB-ECB4B8F9-35A6-47B6-AC03-6F2BE3C71D4A\"")
+        }
         release {
+            buildConfigField("String", "API_KEY", "\"CWB-ECB4B8F9-35A6-47B6-AC03-6F2BE3C71D4A\"")
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
