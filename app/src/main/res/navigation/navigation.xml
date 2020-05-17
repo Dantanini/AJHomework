@@ -20,5 +20,16 @@
         android:id="@+id/infoFragment"
         android:name="com.dantanini.ajhomework.ui.info.InfoFragment"
         android:label="fragment_info"
-        tools:layout="@layout/fragment_info" />
+        tools:layout="@layout/fragment_info">
+
+        <argument
+            android:name="startTime"
+            app:argType="string" />
+        <argument
+            android:name="endTime"
+            app:argType="string" />
+        <argument
+            android:name="temperature"
+            app:argType="string" />
+    </fragment>
 </navigation>

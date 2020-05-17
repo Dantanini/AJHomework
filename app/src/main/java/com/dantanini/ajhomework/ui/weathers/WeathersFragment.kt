@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.dantanini.ajhomework.BuildConfig
 import com.dantanini.ajhomework.R
 import com.dantanini.ajhomework.api.WeatherManager
+import com.dantanini.ajhomework.model.Weather
 import kotlinx.coroutines.*
 
 class WeathersFragment : Fragment() {
@@ -37,9 +39,14 @@ class WeathersFragment : Fragment() {
             val manager = WeatherManager(BuildConfig.API_KEY)
             val weathers = manager.getTaipeiWeathers()
             withContext(Dispatchers.Main) {
-                val adapter = WeathersAdapter(weathers) { Navigation.findNavController(root).navigate(R.id.action_weathers_to_info) }
+                val adapter = WeathersAdapter(weathers) { weather -> navigateByWeather(root, weather) }
                 recyclerView.adapter = adapter
             }
         }
+    }
+
+    private fun navigateByWeather(root: View, weather: Weather) {
+        val bundle = bundleOf("startTime" to weather.startTime, "endTime" to weather.endTime, "temperature" to weather.temperature)
+        Navigation.findNavController(root).navigate(R.id.action_weathers_to_info, bundle)
     }
 }
