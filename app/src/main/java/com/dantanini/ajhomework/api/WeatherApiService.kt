@@ -7,7 +7,7 @@ import retrofit2.http.Query
 
 interface WeatherApiService {
     @GET("v1/rest/datastore/F-C0032-001")
-    suspend fun getWeather(
+    suspend fun getWeatherResponse(
         @Header("cache-control") refresh: Boolean,
         @Query("Authorization") apiKey: String,
         @Query("locationName") locationName: String,

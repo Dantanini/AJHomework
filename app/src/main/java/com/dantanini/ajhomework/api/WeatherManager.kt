@@ -50,9 +50,9 @@ class WeatherManager private constructor(private val context: Context, private v
             .build()
     }
 
-    suspend fun getTaipeiWeather(refresh: Boolean): List<Weather> {
+    suspend fun getTaipeiWeathers(refresh: Boolean): List<Weather> {
         val weatherResponse =
-            apiService.getWeather(refresh, apiKey, LOCATION_TAIPEI, ELEMENT_NAME, FORMAT_JSON)
+            apiService.getWeatherResponse(refresh, apiKey, LOCATION_TAIPEI, ELEMENT_NAME, FORMAT_JSON)
 
         if (weatherResponse.success) {
             return weatherResponse.records.location[0].weatherElement[0].time
