@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">AJHomework</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="nice_image">Nice image</string>
+    <string name="give_me_high_salary">歡迎回來</string>
+    <string name="ok_we_will_give_very_high_salary_for_you">朕，知道了</string>
 </resources>
