@@ -8,11 +8,11 @@
     <fragment
         android:id="@+id/weathersFragment"
         android:name="com.dantanini.ajhomework.ui.weathers.WeathersFragment"
-        android:label="fragment_weather_list"
+        android:label="fragment_weathers"
         tools:layout="@layout/fragment_weathers">
 
         <action
-            android:id="@+id/action_weatherListFragment_to_infoFragment"
+            android:id="@+id/action_weathers_to_info"
             app:destination="@id/infoFragment" />
     </fragment>
 
