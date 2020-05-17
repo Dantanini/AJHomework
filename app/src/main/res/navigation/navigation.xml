@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/weathersFragment">
+
+    <fragment
+        android:id="@+id/weathersFragment"
+        android:name="com.dantanini.ajhomework.ui.weathers.WeathersFragment"
+        android:label="fragment_weather_list"
+        tools:layout="@layout/fragment_weathers">
+
+        <action
+            android:id="@+id/action_weatherListFragment_to_infoFragment"
+            app:destination="@id/infoFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="com.dantanini.ajhomework.ui.info.InfoFragment"
+        android:label="fragment_info"
+        tools:layout="@layout/fragment_info" />
+</navigation>
