@@ -6,8 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.dantanini.ajhomework.MyConstants.Companion.END_TIME
+import com.dantanini.ajhomework.MyConstants.Companion.START_TIME
+import com.dantanini.ajhomework.MyConstants.Companion.TEMPERATURE
 import com.dantanini.ajhomework.R
-import com.dantanini.ajhomework.ui.MyConstants
 
 class InfoFragment : Fragment() {
     private var startTime: String? = null
@@ -17,9 +19,9 @@ class InfoFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            startTime = it.getString(MyConstants.START_TIME)
-            endTime = it.getString(MyConstants.END_TIME)
-            temperature = it.getString(MyConstants.TEMPERATURE)
+            startTime = it.getString(START_TIME)
+            endTime = it.getString(END_TIME)
+            temperature = it.getString(TEMPERATURE)
         }
     }
 

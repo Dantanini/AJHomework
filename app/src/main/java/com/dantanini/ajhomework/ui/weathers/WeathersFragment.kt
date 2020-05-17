@@ -10,10 +10,12 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dantanini.ajhomework.BuildConfig
+import com.dantanini.ajhomework.MyConstants.Companion.END_TIME
+import com.dantanini.ajhomework.MyConstants.Companion.START_TIME
+import com.dantanini.ajhomework.MyConstants.Companion.TEMPERATURE
 import com.dantanini.ajhomework.R
 import com.dantanini.ajhomework.api.WeatherManager
 import com.dantanini.ajhomework.model.Weather
-import com.dantanini.ajhomework.ui.MyConstants
 import kotlinx.coroutines.*
 
 class WeathersFragment : Fragment() {
@@ -48,9 +50,9 @@ class WeathersFragment : Fragment() {
 
     private fun navigateByWeather(root: View, weather: Weather) {
         val bundle = bundleOf(
-            MyConstants.START_TIME to weather.startTime,
-            MyConstants.END_TIME to weather.endTime,
-            MyConstants.TEMPERATURE to weather.temperature
+            START_TIME to weather.startTime,
+            END_TIME to weather.endTime,
+            TEMPERATURE to weather.temperature
         )
         Navigation.findNavController(root).navigate(R.id.action_weathers_to_info, bundle)
     }
