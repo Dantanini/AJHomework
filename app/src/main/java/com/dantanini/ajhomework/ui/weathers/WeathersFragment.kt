@@ -13,6 +13,7 @@ import com.dantanini.ajhomework.BuildConfig
 import com.dantanini.ajhomework.R
 import com.dantanini.ajhomework.api.WeatherManager
 import com.dantanini.ajhomework.model.Weather
+import com.dantanini.ajhomework.ui.MyConstants
 import kotlinx.coroutines.*
 
 class WeathersFragment : Fragment() {
@@ -46,7 +47,11 @@ class WeathersFragment : Fragment() {
     }
 
     private fun navigateByWeather(root: View, weather: Weather) {
-        val bundle = bundleOf("startTime" to weather.startTime, "endTime" to weather.endTime, "temperature" to weather.temperature)
+        val bundle = bundleOf(
+            MyConstants.START_TIME to weather.startTime,
+            MyConstants.END_TIME to weather.endTime,
+            MyConstants.TEMPERATURE to weather.temperature
+        )
         Navigation.findNavController(root).navigate(R.id.action_weathers_to_info, bundle)
     }
 }
